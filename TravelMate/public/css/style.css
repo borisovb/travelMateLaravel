@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css?family=Kavivanar|Lato');
+html {
+    font-family: 'Lato', sans-serif;
+}
+#main {
+    transition: margin-right 0.5s;
+
+}
+h1 {
+    font-family: 'Kavivanar', sans-serif;
+    margin: 0;
+}
+.errorMessages{
+    display: flex;
+    width: 100%;
+    height: auto;
+    background: #f97272;
+}
+.errorMessages p{
+    align-self: center;
+    margin:auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.errorMessagesCloseButton{
+    align-self: center;
+    padding-right: 3%;
+    color: #FFF;
+}
+.errorMessagesCloseButton i{
+    color: #000;
+}
+nav {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: #80BC92;
+}
+
+#logo {
+    font-family: 'Kavivanar', 'Lato', sans-serif;
+    font-size: 24px;
+    margin-right: auto;
+    display: inline-block;
+    align-self: center;
+}
+
+#logo img {
+    height: 80px;
+    margin-left: 10%;
+}
+
+.menu {
+    align-self: center;
+}
+
+.menu ul {
+    text-decoration: none;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 50px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.authMenu {
+    margin-left: auto;
+    align-self: center;
+}
+
+.authMenu ul {
+    text-decoration: none;
+}
+
+.authMenu li {
+    display: inline;
+    margin-right: 50px;
+}
+
+.authMenu a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.headerImgSection {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    background: url('../img/headerBackground.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.headerContainer {
+    align-self: center;
+    margin: auto;
+    text-align: center;
+}
+
+.headerContainer img {
+    width: 200px;
+}
+
+.headerContainer p {
+    font-family: 'Kavivanar', sans-serif;
+    font-size: 20px;
+    margin: 0;
+    font-weight: 200;
+}
+
+.infoSection {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    background-color: #80BC92;
+}
+
+.infoSection img {
+    width: 64px;
+}
+
+.infoLeft {
+    margin-left: auto;
+    align-self: center;
+    text-align: center;
+}
+
+.infoCenter {
+    margin: auto;
+    align-self: auto;
+    text-align: center;
+}
+
+.infoRight {
+    margin-left: auto;
+    align-self: center;
+    text-align: center;
+}
+
+.joinUsSection {
+    display: flex;
+    width: 100%;
+    height: 350px;
+    background: url('../img/joinUsBackground.png') no-repeat center;
+    background-size: cover;
+}
+
+.joinUsSection p {
+    font-size: 48px;
+    color: #FFF;
+}
+
+.joinUsSection div {
+    margin: auto;
+    align-self: center;
+    text-align: center;
+}
+
+.button {
+    background-color: #80BC92;
+    width: 150px;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #40A05D;
+    color: #000000;
+}
+.button2{
+    background-color: #f7f760;
+    color: #000;
+}
+.button2:hover{
+    background-color: #d1d160;
+    color: #000;
+}
+
+.titleSection {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: #40A05D;
+}
+
+.secTitleSection {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: #F0FFEA;
+}
+
+.secNav {
+    margin: auto;
+}
+
+.secNav a {
+    color: #000;
+    text-decoration: none;
+}
+
+.titleSection p {
+    margin: auto;
+    font-family: 'Kavivanar', sans-serif;
+    font-size: 24px;
+}
+
+.wrapper {
+    background: #FFF;
+    display: flex;
+    margin: 0 10%;
+}
+
+.mainSection {
+    margin: auto;
+    padding-left: 2%;
+}
+
+aside {
+    margin: auto;
+    padding-left: 2%;
+    padding-right: 10%;
+}
+
+.infoText {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-color: #80BC92;
+}
+
+.footerMenu a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footerMenu li {
+    list-style: none;
+    margin-right: 50px;
+}
+
+.footerLeftSide {
+    margin: auto;
+}
+
+.footerLeftSide p {
+    font-weight: bold;
+}
+
+.footerRightSide {
+    margin: auto;
+}
+
+.footerLogo {
+    display: inline;
+}
+
+.footerLogo img {
+    width: 32px;
+}
+
+.footerCopyright {
+    display: inline;
+    font-size: 12px;
+}
+
+.footerCopyright a {
+    text-decoration: none;
+    color: #000;
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.gear {
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 60s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+.aboutRight {
+    margin-left: auto;
+}
+
+.aboutLeft {
+    margin-right: auto;
+}
+
+.aboutForm {
+    margin-top: 20%;
+}
+
+.aboutForm {
+    max-width: 500px;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+}
+
+.aboutForm fieldset {
+    border: none;
+}
+
+.aboutForm legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.aboutForm label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.aboutForm input[type="text"],
+.aboutForm textarea,
+.aboutForm select {
+    background: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 30px;
+}
+
+.aboutForm input[type="text"]:focus,
+.aboutForm textarea:focus,
+.aboutForm select:focus {
+    background: #d2d9dd;
+}
+
+.aboutForm select {
+    -webkit-appearance: menulist-button;
+    height: 35px;
+}
+
+.aboutForm .number {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.aboutForm input[type="submit"],
+.aboutForm input[type="button"] {
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1abc9c;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+
+.aboutForm input[type="submit"]:hover,
+.aboutForm input[type="button"]:hover {
+    background: #109177;
+}
+
+.story {
+    margin: 5%;
+    display: flex;
+}
+
+.story img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    float: left;
+    margin-right: 5%;
+}
+
+.storyContent {
+    padding-left: 2%;
+}
+
+.storyDate {
+    float: right;
+}
+
+.aside{
+    display: flex;
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #323232; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.aside .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: #FFF;
+}
+.aside form{
+    margin: auto;
+    color: #fff;
+}
+.aside input[type="text"],
+.aside input[type="password"],
+.aside input[type="email"]
+{
+    background: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 20px;
+}
+.aside input[type="submit"]{
+    width: 100%;
+}
+.warning{
+    font-size: 24px;
+    margin-bottom: 100%;
+}
+.storyImage {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
