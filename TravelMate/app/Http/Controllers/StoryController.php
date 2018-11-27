@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Story;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StoryController extends Controller
 {
@@ -14,7 +15,9 @@ class StoryController extends Controller
      */
     public function index()
     {
-        //
+        $stories = DB::table("stories")->get();
+
+        return view('stories', ['stories' => $stories]);
     }
 
     /**
