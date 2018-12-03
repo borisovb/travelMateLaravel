@@ -4,7 +4,7 @@
 
 <section class="headerImgSection">
     <div class="headerContainer">
-        <img src="{{ asset('img/logo.png') }}" class="gear" />
+        <img src="{{ asset('img/logo2.png') }}" class="gear" />
         <h1>TravelMate</h1>
         <p>Travel from home</p>
     </div>
@@ -30,13 +30,16 @@
 
 <section class="joinUsSection">
     <div>
+        @guest
         <p>JOIN US</p>
-        <button class="button">Login</button>
+        <a href="/login"><button class="button">Login</button></a>
         <br />
-        <button class="button">Register</button>
-
+        <a href="/register"><button class="button">Register</button></a>
+        @else
+        <p>TELL US YOUR STORY</p>
+        <a href="#"><button class="button">Submit a story</button></a>
+        @endguest
     </div>
 </section>
 
 @endsection
-

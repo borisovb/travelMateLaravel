@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/stories', 'StoryController@index');
+Route::get('/stories/{story}', 'StoryController@show');
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');

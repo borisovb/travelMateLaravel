@@ -49,7 +49,7 @@ class StoryController extends Controller
      */
     public function show(Story $story)
     {
-        //
+        return view('story', ['story' => $story]);
     }
 
     /**
