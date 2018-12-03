@@ -4,11 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Story;
 use Validator;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class StoryController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -44,6 +56,8 @@ class StoryController extends Controller
             'content' => ['required', 'min:10']
         ]);
 
+        $validatedRequest['author_id'] = auth()->id();
+
         Story::create($validatedRequest);
         return redirect('/stories');
     }
@@ -67,6 +81,7 @@ class StoryController extends Controller
      */
     public function edit(Story $story)
     {
+        abort_unless($story->author_id == auth()->id(), 403);
         return view('editStory', compact('story'));
     }
 
@@ -79,6 +94,8 @@ class StoryController extends Controller
      */
     public function update(Request $request, Story $story)
     {
+        abort_unless($story->author_id == auth()->id(), 403);
+
         $validatedRequest = request()->validate([
             'title' => ['required', 'min:4'],
             'content' => ['required', 'min:10']
@@ -96,6 +113,7 @@ class StoryController extends Controller
      */
     public function destroy(Story $story)
     {
+        abort_unless($story->author_id == auth()->id(), 403);
         $story->delete();
         return redirect('/stories');
     }

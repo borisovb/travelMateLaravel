@@ -12,7 +12,9 @@
         <strong>Date: </strong> {{ date_format($story->created_at,'d M Y') }}
 
         <div class="float-right">
-        <a href="/stories/{{ $story->id }}/edit"><button type="button" class="btn btn-success">Edit</button></a>
+            @if (Auth::user()->id == $story->author_id)
+            <a href="/stories/{{ $story->id }}/edit"><button type="button" class="btn btn-success">Edit</button></a>
+            @endif
         <br>
         </div>
     </section>

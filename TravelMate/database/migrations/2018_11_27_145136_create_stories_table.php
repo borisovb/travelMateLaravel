@@ -15,9 +15,12 @@ class CreateStoriesTable extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('author_id')->nullable();
             $table->string('title');
             $table->longText('content');
             $table->timestamps();
+
+            $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
