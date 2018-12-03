@@ -21,5 +21,4 @@ Route::resource('stories', 'StoryController');
 
 Route::get('/profile/{id}', 'DashboardController@showProfile');
 Route::get('/dashboard', 'DashboardController@index');
-Route::patch('/dashboard',  ['as' => 'users.update', 'uses' => 'DashboardController@updateUserDetails']);
-
+Route::patch('/dashboard', ['as' => 'users.update', 'uses' => 'DashboardController@updateUserDetails']);

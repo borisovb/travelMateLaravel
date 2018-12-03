@@ -61,7 +61,7 @@ class StoryController extends Controller
      */
     public function edit(Story $story)
     {
-        //
+        return view('editStory', compact('story'));
     }
 
     /**
@@ -73,7 +73,8 @@ class StoryController extends Controller
      */
     public function update(Request $request, Story $story)
     {
-        //
+        $story->update(request(['title', 'content']));
+        return redirect('/stories');
     }
 
     /**
@@ -84,6 +85,7 @@ class StoryController extends Controller
      */
     public function destroy(Story $story)
     {
-        //
+        $story->delete();
+        return redirect('/stories');
     }
 }

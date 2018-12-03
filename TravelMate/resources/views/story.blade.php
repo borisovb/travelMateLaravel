@@ -10,7 +10,11 @@
     <section clas="mainSection">
         <p>{{ $story->content }}</p>
         <strong>Date: </strong> {{ date_format($story->created_at,'d M Y') }}
-        <br><br>
+
+        <div class="float-right">
+        <a href="/stories/{{ $story->id }}/edit"><button type="button" class="btn btn-success">Edit</button></a>
+        <br>
+        </div>
     </section>
 </div>
 
