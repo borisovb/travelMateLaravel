@@ -18,7 +18,7 @@
 
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input class="form-control" type="text" placeholder="Your title" name="title">
+                    <input class="form-control" type="text" placeholder="Your title" name="title" value="{{ old('title') }}">
                     </div>
 
                     {{-- <div class="form-group">
@@ -29,7 +29,7 @@
 
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea class="form-control" name="content" rows="5" placeholder="Your story..."></textarea>
+                        <textarea class="form-control" name="content" rows="5" placeholder="Your story...">{{ old('content') }}</textarea>
                     </div>
 
                     <div class="form-group row">
@@ -38,6 +38,16 @@
                         </div>
                     </div>
                 </div>
+
+                @if($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </form>
 
         </section>

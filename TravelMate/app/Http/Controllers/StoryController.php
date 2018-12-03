@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Story;
+use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -38,7 +39,12 @@ class StoryController extends Controller
      */
     public function store(Request $request)
     {
-        Story::create(request(['title', 'content']));
+        $validatedRequest = request()->validate([
+            'title' => ['required', 'min:4'],
+            'content' => ['required', 'min:10']
+        ]);
+
+        Story::create($validatedRequest);
         return redirect('/stories');
     }
 
@@ -73,7 +79,12 @@ class StoryController extends Controller
      */
     public function update(Request $request, Story $story)
     {
-        $story->update(request(['title', 'content']));
+        $validatedRequest = request()->validate([
+            'title' => ['required', 'min:4'],
+            'content' => ['required', 'min:10']
+        ]);
+
+        $story->update($validatedRequest);
         return redirect('/stories');
     }
 
