@@ -20,4 +20,7 @@ Route::get('/stories/{story}', 'StoryController@show');
 
 Auth::routes();
 
+Route::get('/profile/{id}', 'DashboardController@showProfile');
 Route::get('/dashboard', 'DashboardController@index');
+Route::patch('/dashboard',  ['as' => 'users.update', 'uses' => 'DashboardController@updateUserDetails']);
+
