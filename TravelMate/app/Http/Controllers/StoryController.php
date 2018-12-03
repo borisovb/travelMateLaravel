@@ -15,7 +15,7 @@ class StoryController extends Controller
      */
     public function index()
     {
-        $stories = DB::table("stories")->get();
+        $stories = DB::table("stories")->orderBy('created_at', 'DSC')->get();
 
         return view('stories', ['stories' => $stories]);
     }
@@ -27,7 +27,7 @@ class StoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('newStory');
     }
 
     /**
@@ -38,7 +38,8 @@ class StoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Story::create(request(['title', 'content']));
+        return redirect('/stories');
     }
 
     /**

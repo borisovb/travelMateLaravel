@@ -37,7 +37,7 @@
         <a href="/register"><button class="button">Register</button></a>
         @else
         <p>TELL US YOUR STORY</p>
-        <a href="#"><button class="button">Submit a story</button></a>
+        <a href="/stories/create"><button class="button">Submit a story</button></a>
         @endguest
     </div>
 </section>

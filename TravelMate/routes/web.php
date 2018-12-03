@@ -15,10 +15,9 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/stories', 'StoryController@index');
-Route::get('/stories/{story}', 'StoryController@show');
-
 Auth::routes();
+
+Route::resource('stories', 'StoryController');
 
 Route::get('/profile/{id}', 'DashboardController@showProfile');
 Route::get('/dashboard', 'DashboardController@index');
