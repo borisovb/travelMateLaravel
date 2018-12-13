@@ -14,7 +14,7 @@
     <div class="infoLeft">
         <img src="{{ asset('img/icons/passport.png') }}" />
         <p>Read interesting stories
-            <br> from the around the world</p>
+            <br> from around the world</p>
     </div>
     <div class="infoRight">
         <img src="{{ asset('img/icons/trekking.png') }}" />

@@ -16,18 +16,17 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
         <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css@8.0.0/normalize.css">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrapTheme.min.css') }}">
     </head>
 
     <body>
-        @include('includes.nav')
+        @include('includes.adminNav')
 <div class="content">
         @yield('content')
 </div>
-        @include('includes.footer')
+        @include('includes.adminFooter')
     </body>
 </html>

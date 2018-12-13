@@ -3,21 +3,20 @@
 namespace App\Policies;
 
 use App\User;
-use App\Story;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class StoryPolicy
+class UserPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-    public function manage(User $user, Story $story)
+    public function approve(User $user)
     {
-        return $story->user_id == $user->id || $user->isEditor;
+        return $user->isEditor;
+    }
+
+    public function manageUsers(User $user)
+    {
+        return $user->isAdmin;
     }
 
     public function before($user, $ability)

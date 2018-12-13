@@ -13,30 +13,36 @@
         <li class="stories">
             <a href="/stories">Stories</a>
         </li>
-        <li class="info">
-            <a href="/info">Useful Info</a>
-        </li>
-        <li class="about">
-            <a href="/about">About</a>
-        </li>
+
     </ul>
 
     <ul class="authMenu">
         @guest
-        <li class="login">
-            <a href="{{ route('login') }}">Login</a>
-        </li>
+
         <li class="register">
             @if (Route::has('register'))
-            <a href="{{ route('register') }}">Register</a>
+                <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Register</a>
             @endif
+        </li>
+        <li class="login">
+            <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
         </li>
         @else
         <li class="register">
-            <a href="/dashboard"> <i class="far fa-user-circle"></i> {{ Auth::user()->name }} </a>
+                <a href="/stories/create"> <i class="fas fa-plus-circle"></i> New Story
+                </a>
         </li>
         <li class="register">
-            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+            <a href="/dashboard"> <i class="fas fa-columns"></i> Dashboard </a>
+        </li>
+        @if (auth()->user()->isAdmin || auth()->user()->isEditor)
+        <li class="register">
+                <a href="/admin"> <i class="fas fa-cogs"></i> Admin Panel </a>
+            </li>
+        @endif
+
+        <li class="register">
+            <i class="fas fa-sign-out-alt"></i> <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
             </a>

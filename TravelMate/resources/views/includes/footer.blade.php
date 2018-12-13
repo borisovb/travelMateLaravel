@@ -3,19 +3,19 @@
             <ul class="footerMenu">
                 <li class="home">
                     <a href="/index">
-                        < Home</a>
+                        <i class="fas fa-angle-right"></i> Home</a>
                 </li>
                 <li class="stories">
                     <a href="/stories">
-                        < Stories</a>
+                        <i class="fas fa-angle-right"></i> Stories</a>
                 </li>
                 <li class="info">
                     <a href="/info">
-                        < Useful Info</a>
+                        <i class="fas fa-angle-right"></i> Useful Info</a>
                 </li>
                 <li class="about">
                     <a href="/info">
-                        < About</a>
+                        <i class="fas fa-angle-right"></i> About</a>
                 </li>
             </ul>
             <div class="footerLogo">

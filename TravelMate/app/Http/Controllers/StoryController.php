@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Story;
+use App\User;
 use Validator;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 
 class StoryController extends Controller
@@ -28,7 +30,7 @@ class StoryController extends Controller
      */
     public function index()
     {
-        $stories = DB::table("stories")->orderBy('created_at', 'DSC')->get();
+        $stories = DB::table("stories")->where('approved', '=', '1')->orderBy('created_at', 'DSC')->paginate(5);
 
         return view('stories', ['stories' => $stories]);
     }
@@ -51,12 +53,19 @@ class StoryController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::user();
+
         $validatedRequest = request()->validate([
             'title' => ['required', 'min:4'],
             'content' => ['required', 'min:10']
         ]);
 
-        $validatedRequest['author_id'] = auth()->id();
+        $validatedRequest['user_id'] = $user->id;
+
+
+        if ($user->isAdmin || $user->isEditor) {
+            $validatedRequest['approved'] = 1;
+        }
 
         Story::create($validatedRequest);
         return redirect('/stories');
@@ -70,7 +79,8 @@ class StoryController extends Controller
      */
     public function show(Story $story)
     {
-        return view('story', ['story' => $story]);
+        $user = User::find($story->user_id);
+        return view('story', ['story' => $story, 'user' => $user]);
     }
 
     /**
@@ -81,7 +91,8 @@ class StoryController extends Controller
      */
     public function edit(Story $story)
     {
-        abort_unless($story->author_id == auth()->id(), 403);
+        $this->authorize('manage', $story);
+
         return view('editStory', compact('story'));
     }
 
@@ -94,7 +105,7 @@ class StoryController extends Controller
      */
     public function update(Request $request, Story $story)
     {
-        abort_unless($story->author_id == auth()->id(), 403);
+        $this->authorize('manage', $story);
 
         $validatedRequest = request()->validate([
             'title' => ['required', 'min:4'],
@@ -102,7 +113,7 @@ class StoryController extends Controller
         ]);
 
         $story->update($validatedRequest);
-        return redirect('/stories');
+        return redirect('/stories/' . $story->id);
     }
 
     /**
@@ -113,7 +124,8 @@ class StoryController extends Controller
      */
     public function destroy(Story $story)
     {
-        abort_unless($story->author_id == auth()->id(), 403);
+        $this->authorize('manage', $story);
+
         $story->delete();
         return redirect('/stories');
     }

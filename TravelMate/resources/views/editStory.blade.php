@@ -33,19 +33,18 @@
 
                 <div class="form-group">
                     <div class="offset-sm-12 col-sm-6">
-                        <input type="submit" class="btn btn-success" value="Update Story" />
+                            <button type="submit" class="btn btn-success"> <i class="fas fa-edit"></i> Update Story</button>
                     </div>
                 </div>
             </div>
         </form>
-
         <form method="POST" action="/stories/{{$story->id}}">
             @method('DELETE')
             @csrf
             <div class="col-10">
                 <div class="form-group">
                     <div class="offset-sm-12 col-sm-6">
-                        <input type="submit" class="btn btn-danger" value="Delete" />
+                        <button type="submit" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> Delete</button>
                     </div>
                 </div>
             </div>
