@@ -27,6 +27,7 @@ Route::patch('/dashboard/avatar', ['as' => 'users.updateAvatar', 'uses' => 'Dash
 Route::get('/admin', 'AdminPanelController@index');
 
 Route::get('/admin/users', 'AdminPanelController@manageUsers');
+Route::get('/admin/users/export', 'AdminPanelController@exportUsers');
 
 Route::get('/admin/users/{id}/edit', 'AdminPanelController@editUser');
 Route::patch('/admin/users/{id}/edit', 'AdminPanelController@updateUser');

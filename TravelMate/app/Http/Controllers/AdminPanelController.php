@@ -6,6 +6,9 @@ use App\Story;
 use App\User;
 use Validator;
 use Auth;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
@@ -82,5 +85,11 @@ class AdminPanelController extends Controller
         $user = User::find($id);
         $user->delete();
         return redirect('/admin/users');
+    }
+    public function exportUsers()
+    {
+        $this->authorize('manageUsers', User::class);
+git
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 }

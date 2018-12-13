@@ -5,7 +5,7 @@
 <section class="titleSection">
     <p> {{ $story->title }} </p>
 </section>
-<img class="storyImage" src="{{ asset('img/storyImg2.jpg') }}">
+<img class="storyImage" src="/uploads/storyImages/{{$story->image}}">
 <div class="wrapper">
     <section clas="mainSection">
         <p>{{ $story->content }}</p>

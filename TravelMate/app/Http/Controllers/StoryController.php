@@ -6,9 +6,11 @@ use App\Story;
 use App\User;
 use Validator;
 use Auth;
+use Image;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
+
 
 class StoryController extends Controller
 {
@@ -57,11 +59,18 @@ class StoryController extends Controller
 
         $validatedRequest = request()->validate([
             'title' => ['required', 'min:4'],
-            'content' => ['required', 'min:10']
+            'content' => ['required', 'min:10'],
+            'image' => ['required', 'file', 'max:2048', 'mimes:jpeg,png,jpg']
         ]);
+
 
         $validatedRequest['user_id'] = $user->id;
 
+        $image = $request->file('image');
+        $filename=time().'.'.$image->getClientOriginalExtension();
+        image::make($image)->resize(1280,720)->save(public_path('uploads\storyImages\\'.$filename));
+        image::make($image)->resize(1280,720)->pixelate(12)->save(public_path('uploads\storyImages\p'.$filename));
+        $validatedRequest['image'] = $filename;
 
         if ($user->isAdmin || $user->isEditor) {
             $validatedRequest['approved'] = 1;

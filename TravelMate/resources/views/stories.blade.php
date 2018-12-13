@@ -10,7 +10,7 @@
     <section clas="mainSection">
         @foreach($stories as $story)
         <article class="story">
-            <img src="{{ asset('img/storyImg2.jpg') }}" />
+            <img src="/uploads/storyImages/{{$story->image}}" onmouseover="this.src='/uploads/storyImages/p{{$story->image}}'" onmouseout="this.src='/uploads/storyImages/{{$story->image}}'" />
             <div class="storyContent">
                 <h2>{{$story->title}}</h2>
                 <p>{{ str_limit($story->content, 100, '...') }}</p>
@@ -23,6 +23,6 @@
         @endforeach
         {{ $stories->links() }}
     </section>
-</>
+</div>
 
 @endsection

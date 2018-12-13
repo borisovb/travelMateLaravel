@@ -16,6 +16,7 @@ class CreateStoriesTable extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
+            $table->string('image')->default('default.png');
             $table->string('title');
             $table->longText('content');
             $table->boolean('approved')->default(false);

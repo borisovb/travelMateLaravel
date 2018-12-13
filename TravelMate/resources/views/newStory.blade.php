@@ -9,7 +9,7 @@
     <div class="container">
         <section class="mainSection">
             <br>
-            <form method="POST" action="/stories">
+            <form method="POST" action="/stories" enctype="multipart/form-data">
 
                 @method('POST')
                 @csrf
@@ -21,11 +21,11 @@
                     <input class="form-control" type="text" placeholder="Your title" name="title" value="{{ old('title') }}">
                     </div>
 
-                    {{-- <div class="form-group">
-                        <label for="image">File input</label>
-                        <input type="file" class="form-control-file" id="image" aria-describedby="fileHelp">
-                        <small id="fileHelp" class="form-text text-muted">Lorem ipsum.</small>
-                    </div> --}}
+
+                    <div class="form-group">
+                        <label for="image">Choose image</label>
+                        <input type="file" class="form-control-file" id="image" name="image">
+                    </div>
 
                     <div class="form-group">
                         <label for="content">Content</label>

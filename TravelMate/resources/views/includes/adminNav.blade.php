@@ -26,7 +26,7 @@
         <ul class="nav navbar-nav ml-auto">
                 @if (auth()->user()->isAdmin)
                 <li class="nav-item">
-                    <a class="nav-link" href="/" target="_blank"><i class="fas fa-download"></i> Export Users</a>
+                    <a class="nav-link" href="/admin/users/export" target="_blank"><i class="fas fa-download"></i> Export Users</a>
                 </li>
                 @endif
           <li class="nav-item">
