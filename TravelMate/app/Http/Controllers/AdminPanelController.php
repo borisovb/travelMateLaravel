@@ -89,7 +89,6 @@ class AdminPanelController extends Controller
     public function exportUsers()
     {
         $this->authorize('manageUsers', User::class);
-git
         return Excel::download(new UsersExport, 'users.xlsx');
     }
 }
